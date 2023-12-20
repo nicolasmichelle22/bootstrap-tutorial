@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <style>
+     body{
+    font:15PX/1.5 Arial, Helvetica,sans-serif; 
+  padding:0;
+  margin:0;
+  background-color: #f4f4fe;
+}
+
+.container{
+    width:80%;
+    margin:auto;
+    overflow:hidden;
+}
+
+.footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      background-color: #f2f2f2; 
+      color: darkblue;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    </style>
+</head>
+<body>
+
+  <div class="header">
+     <div class="container">
+      <img src="facebook-icon.png" alt="Facebook">     
+      <img src="instagram-icon.png" alt="Instagram">  
+      <button type="button" class="btn-close" aria-label="Close"></button>
+     </div>
+  </div><br><br>
+
+
+  <div class="row">       
+        <div class="row my-3">
+             <div class="col-sm-6 mb-3 mb-sm-0">
+                <div class="card">
+                  <div class="card text-bg-danger mb-3" style="max-width: 80rem;">
+                      <div class="card-">
+                          <img src="https://picsum.photos/100/100" alt="">
+                         <div class="card-body">
+                        <h5 class="card-title">Reservation</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, repellat aspernatur excepturi unde expedita nostrum alias dolorum enim voluptate, facere et, quam ab adipisci necessitatibus omnis iusto? Quo, molestiae ex.</p>
+                      </div>
+                  </div>
+                </div>
+             </div>
+        </div>
+  </div><br><br>
+
+<div class="float-end">
+          <form action=>
+            <button class="btn btn-light">Step 1 <br>request</button>
+            <button type="button" class="btn btn-light">Step 2 <br>personal info</button>
+            <button type="button" class="btn btn-light">Step 3 <br>Message</button><br>
+
+            <form id="dateForm">
+              <label for="checkInDate">Check-in Date:</label>
+              <input type="date" id="checkInDate" required>
+      
+              <label for="checkOutDate">Check-out Date:</label>
+              <input type="date" id="checkOutDate" required>
+      
+              <button type="button" onclick="calculateDuration()">Calculate Duration</button>
+              <p id="result"></p><br><br>
+          </form>
+      
+
+          <form>
+            <label for="adultCount">Adults:</label>
+            <input type="text" id="adultCount" value="1" readonly>
+    
+            <button type="button" onclick="decrement('adultCount')">-</button>
+            <button type="button" onclick="increment('adultCount')">+</button>
+    
+            <br>
+    
+            <label for="childCount">Children:</label>
+            <input type="text" id="childCount" value="0" readonly>
+    
+            <button type="button" onclick="decrement('childCount')">-</button>
+            <button type="button" onclick="increment('childCount')">+</button>
+        </form>
+        <div id="result">
+          <p>Total Guests: <span id="totalGuests">1</span></p>
+      </div>
+
+        <div>
+          <select id="items" select room type="items">
+              <option value="item1">select room type</option>
+              <option value="item2">single bed</option>
+              <option value="item3">Double bed</option>
+              <option value="item3">Suits</option>
+              <!-- Add more items as needed -->
+          </select><br><br>
+
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button class="btn btn-danger me-md-2" type="button">Next</button>
+          </div>
+      </div>
+          </form>
+        </div>
+    </div>
+  </div>            
+</div><br><br>
+
+
+  <div class="footer">
+    <div> &copy; 2023 Matenia</div>
+    <div>
+      <a href="#">Purchase Template</a> | <a href="#">Contact</a>
+    </div>
+  </div>
+
+  <script>
+    function calculateDuration() {
+        var checkInDate = new Date(document.getElementById('checkInDate').value);
+        var checkOutDate = new Date(document.getElementById('checkOutDate').value);
+
+        if (checkOutDate <= checkInDate) {
+            alert("Check-out date must be after check-in date.");
+            return;
+        }
+
+        var duration = (checkOutDate - checkInDate) / (1000 * 60 * 60 * 24);
+        document.getElementById('result').innerHTML = "Duration: " + duration + " days";
+    }
+
+    function increment(elementId) {
+            var countElement = document.getElementById(elementId);
+            var count = parseInt(countElement.value);
+            countElement.value = count + 1;
+            updateTotalGuests();
+        }
+
+        function decrement(elementId) {
+            var countElement = document.getElementById(elementId);
+            var count = parseInt(countElement.value);
+            
+            if (count > 0) {
+                countElement.value = count - 1;
+                updateTotalGuests();
+            }
+        }
+
+        function updateTotalGuests() {
+            var adultCount = parseInt(document.getElementById('adultCount').value);
+            var childCount = parseInt(document.getElementById('childCount').value);
+            var totalGuests = adultCount + childCount;
+
+            document.getElementById('totalGuests').innerText = totalGuests;
+        }
+
+    
+</script>
+
+
+  <script src="./js/bootstrap.bundle.js"></script>
+</body>
+</html>

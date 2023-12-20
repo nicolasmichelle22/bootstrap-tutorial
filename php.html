@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP AND HTML Connection</title>
+</head>
+<body>
+    <h1>Hotel Reservation Form</h1>
+    <form action="process.php" method="post">
+        <label for="name">Name:</label>
+        <input type="text" name="name" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" required><br>
+
+        <label for="check_in">Check-in Date:</label>
+        <input type="date" name="check_in" required><br>
+
+        <label for="check_out">Check-out Date:</label>
+        <input type="date" name="check_out" required><br>
+
+        <input type="submit" value="Submit Reservation">
+    </form>
+
+    <?php
+// Establish a connection to the MySQL database
+$servername = "your_server_name";
+$username = "your_username";
+$password = "your_password";
+$dbname = "your_database_name";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check the connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Process form data
+$name = $_POST['name'];
+$email = $_POST['email'];
+$check_in = $_POST['check_in'];
+$check_out = $_POST['check_out'];
+
+// Insert data into the database
+$sql = "INSERT INTO reservations (name, email, check_in, check_out) VALUES ('$name', '$email', '$check_in', '$check_out')";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Reservation submitted successfully!";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+// Close the database connection
+$conn->close();
+?>
+
+</body>
+</html>

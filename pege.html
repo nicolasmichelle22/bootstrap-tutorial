@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check-in and Check-out Dates</title>
+    <style>
+        body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: dark; 
+    }
+    </style>
+</head>
+<body>
+
+    <h2>Check-in and Check-out Dates</h2>
+
+    <form id="dateForm">
+        <label for="checkInDate">Check-in Date:</label>
+        <input type="date" id="checkInDate" required>
+
+        <label for="checkOutDate">Check-out Date:</label>
+        <input type="date" id="checkOutDate" required>
+
+        <button type="button" onclick="calculateDuration()">Calculate Duration</button>
+
+        <p id="result"></p>
+    </form>
+
+    <script>
+        function calculateDuration() {
+            var checkInDate = new Date(document.getElementById('checkInDate').value);
+            var checkOutDate = new Date(document.getElementById('checkOutDate').value);
+
+            if (checkOutDate <= checkInDate) {
+                alert("Check-out date must be after check-in date.");
+                return;
+            }
+
+            var duration = (checkOutDate - checkInDate) / (1000 * 60 * 60 * 24);
+            document.getElementById('result').innerHTML = "Duration: " + duration + " days";
+        }
+    </script>
+
+</body>
+</html>
