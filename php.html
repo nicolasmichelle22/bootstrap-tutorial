@@ -4,57 +4,124 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHP AND HTML Connection</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <style>
+.container {
+    width: 500px;
+    height: 500px;
+    background-color: red;
+    float: left;
+    text-align: ;
+}
+
+.header {
+    background-color: #ffffff;
+    width: 100px;
+    height: 100px;
+    border-inline-color: #ffff;
+
+}
+
+.key{
+    float: right;
+    margin-bottom: 100%;
+ 
+}
+
+.card {
+    width: 500px;
+    height: 500px;
+    float: flex;
+}
+    </style>
 </head>
 <body>
-    <h1>Hotel Reservation Form</h1>
-    <form action="process.php" method="post">
-        <label for="name">Name:</label>
-        <input type="text" name="name" required><br>
-
-        <label for="email">Email:</label>
-        <input type="email" name="email" required><br>
-
-        <label for="check_in">Check-in Date:</label>
-        <input type="date" name="check_in" required><br>
-
-        <label for="check_out">Check-out Date:</label>
-        <input type="date" name="check_out" required><br>
-
-        <input type="submit" value="Submit Reservation">
-    </form>
-
-    <?php
-// Establish a connection to the MySQL database
-$servername = "your_server_name";
-$username = "your_username";
-$password = "your_password";
-$dbname = "your_database_name";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check the connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-// Process form data
-$name = $_POST['name'];
-$email = $_POST['email'];
-$check_in = $_POST['check_in'];
-$check_out = $_POST['check_out'];
-
-// Insert data into the database
-$sql = "INSERT INTO reservations (name, email, check_in, check_out) VALUES ('$name', '$email', '$check_in', '$check_out')";
-
-if ($conn->query($sql) === TRUE) {
-    echo "Reservation submitted successfully!";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
-
-// Close the database connection
-$conn->close();
-?>
+    <header>
+        <h1><img src="menu-icon.png" alt="menu"></h1>
+        <div class="key">
+            <img src="dataloadin/menupng" alt="">
+            <img src="facebook-icon.png" alt="Facebook">     
+     <img src="instagram-icon.png" alt="Instagram"> 
+     <button type="button" class="btn-close" aria-label="Close"></button>
+        </div>
+    </header>
+    <div class="container">   
+    </div>
+    <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+  
+            <div class="card text-center">
+    <div class="card-header">
+      <ul class="nav nav-tabs card-header-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="true" href="#">Step 1 <br>request</a>
+        </li><br>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Step 2 <br>personal info</a>
+        </li><br>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Step 3 <br>Message</a>
+        </li><br>
+      </ul>
+    </div>
+  
+  
+    <div class="card-body">
+       <div class="form">
+        <form action=>
+          <!-- <button class="btn btn-light">Step 1 <br>request</button>
+          <button type="button" class="btn btn-light">Step 2 <br>personal info</button>
+          <button type="button" class="btn btn-light">Step 3 <br>Message</button><br> -->
+  
+          <form id="dateForm">
+            <label for="checkInDate">Check-in Date:</label>
+            <input type="date" id="checkInDate" required><br><br>
+    
+            <label for="checkOutDate">Check-out Date:</label>
+            <input type="date" id="checkOutDate" required><br><br>
+    
+            <button type="button" onclick="calculateDuration()">Calculate Duration</button>
+            <p id="result"></p><br><br>
+        </form>
+    
+  
+        <form id="gender">
+          <label for="adultCount">Adults:</label>
+          <input type="text" id="adultCount" value="1" readonly>
+  
+          <button type="button" onclick="decrement('adultCount')">-</button>
+          <button type="button" onclick="increment('adultCount')">+</button>
+  
+          <br>
+  
+          <label for="childCount">Children:</label>
+          <input type="text" id="childCount" value="0" readonly>
+  
+          <button type="button" onclick="decrement('childCount')">-</button>
+          <button type="button" onclick="increment('childCount')">+</button>
+      </form>
+      <div id="result">
+        <p>Total Guests: <span id="totalGuests">1</span></p>
+    </div>
+  
+      <div>
+        <select id="items" select room type="items">
+            <option value="item1">select room type</option>
+            <option value="item2">single bed</option>
+            <option value="item3">Double bed</option>
+            <option value="item3">Suits</option>
+            <!-- Add more items as needed -->
+        </select><br><br>
+  
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button class="btn btn-danger me-md-2" type="button">Next</button>
+        </div>
+        
+    </div>
+        </form>
+      </div>
+  </div>           
 
 </body>
 </html>
