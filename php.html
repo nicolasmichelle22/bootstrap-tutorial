@@ -29,9 +29,7 @@
 }
 
 .card {
-    width: 500px;
-    height: 500px;
-    float: flex;
+    float: right;
 }
     </style>
 </head>
@@ -43,85 +41,14 @@
             <img src="facebook-icon.png" alt="Facebook">     
      <img src="instagram-icon.png" alt="Instagram"> 
      <button type="button" class="btn-close" aria-label="Close"></button>
-        </div>
+        </div>    
     </header>
-    <div class="container">   
-    </div>
-    <div class="col-sm-6">
-        <div class="card">
-          <div class="card-body">
-  
-            <div class="card text-center">
-    <div class="card-header">
-      <ul class="nav nav-tabs card-header-tabs">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="true" href="#">Step 1 <br>request</a>
-        </li><br>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Step 2 <br>personal info</a>
-        </li><br>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Step 3 <br>Message</a>
-        </li><br>
-      </ul>
-    </div>
-  
-  
-    <div class="card-body">
-       <div class="form">
-        <form action=>
-          <!-- <button class="btn btn-light">Step 1 <br>request</button>
-          <button type="button" class="btn btn-light">Step 2 <br>personal info</button>
-          <button type="button" class="btn btn-light">Step 3 <br>Message</button><br> -->
-  
-          <form id="dateForm">
-            <label for="checkInDate">Check-in Date:</label>
-            <input type="date" id="checkInDate" required><br><br>
+
     
-            <label for="checkOutDate">Check-out Date:</label>
-            <input type="date" id="checkOutDate" required><br><br>
-    
-            <button type="button" onclick="calculateDuration()">Calculate Duration</button>
-            <p id="result"></p><br><br>
-        </form>
-    
-  
-        <form id="gender">
-          <label for="adultCount">Adults:</label>
-          <input type="text" id="adultCount" value="1" readonly>
-  
-          <button type="button" onclick="decrement('adultCount')">-</button>
-          <button type="button" onclick="increment('adultCount')">+</button>
-  
-          <br>
-  
-          <label for="childCount">Children:</label>
-          <input type="text" id="childCount" value="0" readonly>
-  
-          <button type="button" onclick="decrement('childCount')">-</button>
-          <button type="button" onclick="increment('childCount')">+</button>
-      </form>
-      <div id="result">
-        <p>Total Guests: <span id="totalGuests">1</span></p>
-    </div>
-  
-      <div>
-        <select id="items" select room type="items">
-            <option value="item1">select room type</option>
-            <option value="item2">single bed</option>
-            <option value="item3">Double bed</option>
-            <option value="item3">Suits</option>
-            <!-- Add more items as needed -->
-        </select><br><br>
-  
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-          <button class="btn btn-danger me-md-2" type="button">Next</button>
-        </div>
-        
-    </div>
-        </form>
-      </div>
-  </div>           
+    <div>
+         <div class="container">            
+         </div>          
+  </div>
 
 </body>
 </html>
