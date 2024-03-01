@@ -4,81 +4,120 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Html, Css and Js practical</title>
   <link rel="stylesheet" href="./css/bootstrap.css">
   <style>
      body{
-    font:15PX/1.5 Arial, Helvetica,sans-serif; 
-  padding:0;
-  margin:0;
-  background-color: skyblue;
+    
 }
 
-.header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px;
-      border-bottom: #fff 3px solid;
-      background-color: #ffff;
-    }
+    .header {
+          background-color: rgb(221, 249, 240);
+          height: 60px;
+          margin-bottom: 6px;
+          border: 1px;
+         border-color: #ffff;
+        }
 
-    .header #branding{
+    .menu-1 {
       float: left;
+      align: center;
     }
 
+    .menu-2{
+      float: right;
+      width: 15;
+      padding-right: 20px;
+      padding-top: 20px;
+    }
+
+    .main {
+      float: flex;
+      padding-left: 8px;
+      background-color: rgb(187, 216, 225);
+      /* background-image: url('logo/nokisa.jpg'); */
+      height: 500px;
+      margin-bottom: 20px;
+      /* margin-top: 40px; */
+
+    }
+
+
+    .card-container {
+      float: left;
+      background-color: rgb(241, 35, 70);
+      color: #ffff;
+      height: 400px;
+      width: 300px;
+      margin-top:20px;
+      margin-bottom: 50px;
+      border-radius: 4px;
+
+    }
+
+    .nokisan-message {
+      padding-top: 40px;
+      padding-left: 20px;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      
+    }
+
+    .lorem {
+      position: center;
+      padding-left: 5px;
+    }
+
+    .right-sidebar {
+      float: right;
+    }
+
+
+
+    
 
 .footer {
-      display: flex;
-      justify-content: space-between; 
-      align-items: center;
-      padding: 10px;
-      background-color: #ffff; 
-      color: #fff;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
+     
     }
  </style>
 
  
  </head>
 <body>
-
-
   <header>
-  <div class="container">
-    <div id="branding">
-      <h1><img src="menu-icon.png" alt="menu"></h1>
-     <img src="facebook-icon.png" alt="Facebook">     
-     <img src="instagram-icon.png" alt="Instagram"> 
-     https://fontawesome.com/icons/instagram
-     <button type="button" class="btn-close" aria-label="Close"></button>
-    </div>
- </div>
+  <div class="header">
+        <div class="menu-1">
+          <img src="logo/menu.png"width="40/40">
+        </div>
+        <div class="menu-2">
+          <button><img src="logo/facebook.png" width="15/15"></button>
+          <button><img src="logo/instagram.png" width="15/15"></button>
+          <button><img src="logo/in.png" width="15/15"> </button>
+          <button><img src="logo/close.png" width="15/15"></button>
+          <img src="logo/menu-option.png" width="30/30">
+        </div>
+  </div>
 </header>
   
-  <div class="row">       
-    <div class="row my-3">
-         <div class="col-sm-6 mb-3 mb-sm-0">
-            <div class="card">
-              <div class="card text-bg-danger mb-3" style="max-width: 50rem;">
-                  <div class="card-">
-                      <img src="https://picsum.photos/100/400" alt="">
-                     <div class="card-body">
-                    <h5 class="card-title">Reservation</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, repellat aspernatur excepturi unde expedita nostrum alias dolorum enim voluptate, facere et, quam ab adipisci necessitatibus omnis iusto? Quo, molestiae ex.</p>
-                  </div>
-              </div>
-            </div>
-         </div>
+  <div class="main">
+    <div class="card-container">
+      <img class="nokisan-message" src="logo/nokisan.png" width="100/100">
+      <p class="lorem">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Dolorum consectetur dignissimos perspiciatis in pariatur nemo 
+        iure sint beatae omnis corporis 
+        sapiente quod animi nulla, nostrum.
+      </p>
     </div>
 
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-body">
+    <div class="right-sidebar">
+      
+    </div>
+  </div>      
+ </div>
 
-          <div class="card text-center">
+
+          <!-- <div class="card text-center">
   <div class="card-header">
     <ul class="nav nav-tabs card-header-tabs">
       <li class="nav-item">
@@ -91,10 +130,10 @@
         <a class="nav-link disabled" aria-disabled="true">Step 3 <br>Message</a>
       </li><br>
     </ul>
-  </div>
+  </div> -->
 
 
-  <div class="card-body">
+  <!-- <div class="card-body">
      <div class="form">
       <form action=>
         <!-- <button class="btn btn-light">Step 1 <br>request</button>
@@ -148,16 +187,16 @@
   </div>
       </form>
     </div>
-</div>           
+</div>         
   
 <footer>
-  <div class="container-fluid">
+  <!-- <div class="container-fluid">
     <p>&copy; 2023 Mastenia</p> 
     <ul>
       <li><a href="https://1.envato.market/ovXQb" target="_parent" class="animated_link">Purchasetemplate</a></li>
       <li><a href="#0" class="animated_link">|Contacts</a></li>
     </ul>
-  </div>
+  </div> -->
 </footer>
 
 
