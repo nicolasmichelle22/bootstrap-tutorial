@@ -7,6 +7,125 @@
     <link rel="stylesheet" href="./css/bootstrap.css">
 </head>
 <body>
+    <style>
+      body {
+        /* background-image: url(logo/nokisa.jpg); */
+      }
+        .header {
+          height: 55px;
+          justify-content: space-between;
+          margin-bottom: 30px;
+          border: 1px;
+         border-color: #ffff;
+         background-color: whitesmoke;
+         position: fixed;
+         top: 0;
+         left: 0;
+         right: 0;
+         z-index: 100%;
+        }
+
+
+
+    .menu-1 {
+      float: left;
+      align-items: center;
+      display: flex;
+    }
+
+    .menu-2{
+      float: right;
+      width: 15;
+      padding-right: 20px;
+      padding-top: 20px;
+    }
+
+    .section {
+      display: flex;
+      flex-direction: row;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 16px;
+      row-gap: 40px;
+    }
+
+    .danger-container {
+      width: 300px;
+      background-color: rgb(251, 52, 52);
+      color: white;
+      height: 400px;
+      border-radius: 6px;
+      float: left;
+      align-content: center;
+    }
+      /* all in danger .danger-container are style here */
+    .nokisan-message {
+      height: 150px;
+      padding-top: 15px;
+      padding-left: 13px;
+      border-radius: 10px;
+    } 
+    
+   .reserve {
+      padding-left: 50px;
+    } 
+
+    .info {
+      float: right;
+      padding-right: 5px;
+      width: 30px;
+      border-radius: 30px;
+    } 
+
+    /* right section stlyle */
+
+    .right-section {
+      float: left;
+      padding-top: 50px;
+      padding-left: 50px;
+      width: 500px;
+    }
+
+    .steps-buttons {
+      width: 20px;
+      display: flex;
+      
+    }
+
+
+    .form {
+      width: 600px;
+      height: 300px;
+      background-color: aliceblue;
+      padding-right: 80px;
+      border-radius: 9px;
+      text-align: center;
+    }
+
+   .form-date {
+      padding-top: 40px;
+      border: none;
+    }
+
+    .gender {
+      padding-top: px;
+    } 
+
+    .Alduts {
+      border-style: none;
+    }
+
+    .next-button {
+      margin-top: 40px;
+      float: right;
+    }
+
+    .footer {
+      background-color: aquamarine;
+      display: flex;
+    }
+
+    </style>
+    
 <header>
     <div class="header">
         <div class="menu-1">
@@ -23,52 +142,76 @@
 </header>
 
 
-<nav>
-    <div>
-        <img class="nokisan-message" src="logo/nokisan.png" width="100/100">
-      <p class="lorem">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-        Dolorum consectetur dignissimos perspiciatis in pariatur nemo 
-        iure sint beatae omnis corporis 
-        sapiente quod animi nulla, nostrum.
-      </p>
-         <img src="logo/infobox.jpg" width="16px">
+<section>
+        <div class="danger-container">
+            <img class="nokisan-message" src="logo/nokisan.png" width="100/100">
+            <h1 class="reserve">Reservation</h1>
+          <p class="lorem">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Dolorum consectetur dignissimos perspiciatis in pariatur nemo 
+            iure sint beatae omnis corporis 
+            sapiente quod animi nulla, nostrum.
+          </p>
+            <img class="info" src="logo/infobox.jpg" width="16px">
+        </div>
+    
+    <div class="right-section">
+            <div class="steps-buttons">
+              <button class="btn btn-light"> <b> Step1</b> request</button>
+              <button type="button"class="btn btn-light">Step 2 personal info</button>
+              <button type="button" class="btn btn-light">Step 3 Message</button><br>
+            </div>
+
+        <div class="form">
+                <div class="form-date">
+                  <label for="checkIn/Out">Checkin/Out Date:  </label>
+                  <input type="date" id="checkIn/OutDate" required>
+                  <input type="date" id="checkOutDate" required>
+                <!-- <button type="button" onclick="calculateDuration()">Calculate Duration
+                  </button> -->
+                  <p id="result"></p>
+                </div>
+
+        <div class="gender">   
+                <div class="Adults">
+                  <label for="adultCount">Adults</label>            
+                  <input type="text" id="adultCount" value="0" readonly>
+                  <button type="button" onclick="increment('adultCount')">+</button>
+                  <button type="button" onclick="decrement('adultCount')">-</button>
+                </div>
+                <div class="Children">
+                  <label for="childCount">Children</label>
+                  <label for="adultCount"></label>
+                  <input type="text" id="adultCount" value="0" readonly>
+                  <button type="button" onclick="increment('adultCount')">+</button>
+                  <button type="button" onclick="decrement('adultCount')">-</button>
+                </div>
+
+                <select id="items" select room type="items">
+                  <option value="item1">select room type</option>
+                  <option value="item2">single bed</option>
+                  <option value="item3">Double bed</option>
+                  <option value="item3">Suits</option>
+                </select>      
+              </div>
+
+              <div class="next-button">  
+                <button class="btn btn-danger me-md-2" type="button">Next</button>
+              </div>   
+                  
+        </div>       
+        </div>
+    </div>  
+</section>
+
+<footer>
+  <div class="footer">
+    <div class="matenias"> &copy; 2023 Matenia</div>
+    <div contact>
+      <a href="#">Purchase Template</a> | <a href="#">Contact</a>
     </div>
-
-    <nav2>
-        <button class="btn btn-light">Step1 request</button>
-        <button type="button"class="btn btn-light">Step 2 personal info</button>
-        <button type="button" class="btn btn-light">Step 3 Message</button><br>
-    </nav2>
-    <nav3>
-        <label for="checkIn/Out">Checkin/Out Date:  </label>
-        <input type="date" id="checkIn/OutDate" required>
-        <input type="date" id="checkOutDate" required>
-        <button type="button" onclick="calculateDuration()">Calculate Duration
-        </button>
-        <p id="result"></p>
-
-          <label for="adultCount">Adults:</label>
-          <button type="button" onclick="increment('adultCount')">+</button>
-          <input type="text" id="adultCount" value="0" readonly>
-          <button type="button" onclick="decrement('adultCount')">-</button>
-
-          <label for="childCount">Children:</label>
-          <input type="text" id="childCount" value="0" readonly>
-          <button type="button" onclick="decrement('childCount')">-</button>
-          <button type="button" onclick="increment('childCount')">+</button> 
-          <p>Total Guests: <span id="totalGuests">0</span></p>
-
-          <select id="items" select room type="items">
-            <option value="item1">select room type</option>
-            <option value="item2">single bed</option>
-            <option value="item3">Double bed</option>
-            <option value="item3">Suits</option>
-          </select>
-          <div><button class="btn btn-danger me-md-2" type="button">Next</button></div>
-    </nav3>
-</nav>
+  </div>
+</footer>
 
 </body>
 </html>
-       
